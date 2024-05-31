@@ -10,3 +10,11 @@ CREATE TABLE usuarios(
     email VARCHAR(100) UNIQUE NOT NULL,
     password VARCHAR(100)NOT NULL
 );
+
+CREATE TABLE tareas(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(100) NOT NULL,
+    completado BOOLEAN DEFAULT false,
+    usuario_id INT NOT NULL,
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
+)
