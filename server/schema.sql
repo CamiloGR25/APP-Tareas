@@ -39,3 +39,12 @@ INSERT INTO usuarios (nombre, email, password) VALUES ("David", "david@gmail.com
 --Insertar tareas:
 INSERT INTO tareas (titulo, usuario_id) 
 VALUES("Hacer lagartijas 💪🏻",1), ("Preparar desayuno ☕",1), ("Leer mi libro📚",1), ("Bañarme 🛁🚿",1), ("Ir al gym 🏋",1);
+
+-- Compartir tarea:
+INSERT INTO tareas_compartidas (tarea_id, usuario_id, compartir_id) VALUES (1,1,2);
+
+--verificar su insersion
+select tareas.*, tareas_compartidas.compartir_id
+from tareas
+left join tareas_compartidas on tareas.id=tareas_compartidas.tarea_id
+where tareas.usuario_id=2 or tareas_compartidas.compartir_id=2;
