@@ -26,8 +26,10 @@ CREATE TABLE tareas_compartidas(
     id INT AUTO_INCREMENT PRIMARY KEY,
     tarea_id INT,
     usuario_id INT,
+    compartir_id INT,
     FOREIGN KEY (tarea_id) REFERENCES tareas(id),
-    FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+    FOREIGN KEY (usuario_id) REFERENCES usuarios(id),
+    FOREIGN KEY (compartir_id) REFERENCES usuarios(id)
 );
 
 --Insertar dos usuarios:
