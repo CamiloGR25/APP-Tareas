@@ -29,3 +29,11 @@ CREATE TABLE tareas_compartidas(
     FOREIGN KEY (tarea_id) REFERENCES tareas(id),
     FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
 );
+
+--Insertar dos usuarios:
+INSERT INTO usuarios (nombre, email, password) VALUES ("Camilo", "camilo@gmail.com", "123");
+INSERT INTO usuarios (nombre, email, password) VALUES ("David", "david@gmail.com", "123");
+
+--Insertar tareas:
+INSERT INTO tareas (titulo, usuario_id) 
+VALUES("Hacer lagartijas 💪🏻",1), ("Preparar desayuno ☕",1), ("Leer mi libro📚",1), ("Bañarme 🛁🚿",1), ("Ir al gym 🏋",1);
